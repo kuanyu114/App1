@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:App1"              
+             x:Class="App1.MainPage">
+
+    <StackLayout Orientation="Vertical" Padding="5">
+        <ListView x:Name="list" SeparatorColor="blue" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding recipeName}"></Label>
+                                <Label Text="{Binding recipeDescription}"></Label>
+                                <Label Text="{Binding Picture}"></Label>
+                            </StackLayout>
+                            <Button Text="步驟" CommandParameter="{Binding .}"></Button>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+

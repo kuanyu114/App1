@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mPhoneApp.Views.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="瘋廚網"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title" Padding="0,20,0,0"/>
+            <Label Text="食譜食材整合平台"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand" FontSize="Subtitle" Padding="0,5,0,0"/>
+            <ContentView Padding="0,0,0,0" VerticalOptions="Center">
+                <Image Source="LOGO.png" VerticalOptions="Center" HeightRequest="280" />
+            </ContentView>
+            <Button Text="前往食譜" Clicked="button_to_aboutpage" CommandParameter="{Binding .}"></Button>
+            <Button Text="前往公開聊天室" Clicked="button_to_publicchat" CommandParameter="{Binding .}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

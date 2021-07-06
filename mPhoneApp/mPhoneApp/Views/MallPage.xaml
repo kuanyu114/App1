@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mPhoneApp.Views.MallPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="5">
+            <ListView x:Name="list" SeparatorColor="blue" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image Source="{Binding MerchandisePicture}" HeightRequest="64" WidthRequest="64" HorizontalOptions="Start"/>
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding IngredientCategory}" FontSize="Subtitle"></Label>
+                                    <Label Text="{Binding Ingredient}"></Label>
+                                    <Label Text="{Binding IngredientUnit}"></Label>
+                                    <Label Text="{Binding Price}"></Label>
+                                    
+                                </StackLayout>
+                                <Button Text="加入購物車" Clicked="button_clicked" CommandParameter="{Binding .}"></Button>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
