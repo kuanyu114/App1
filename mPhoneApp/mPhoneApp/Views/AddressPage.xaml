@@ -5,15 +5,15 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="收件人名"/>
-            <Entry x:Name="Reciever"></Entry>
+            <Entry x:Name="Reciever" Text="蔡冠宇"></Entry>
             <Label Text="連絡電話"/>
-            <Entry x:Name="PhoneNumber"></Entry>
+            <Entry x:Name="PhoneNumber" Text="0955777755"></Entry>
             <Label Text="城市"/>
-            <Entry x:Name="DeliveryCounty"></Entry>
+            <Entry x:Name="DeliveryCounty" Text="台北市"></Entry>
             <Label Text="行政區"/>
-            <Entry x:Name="DeliveryDistrict"></Entry>
+            <Entry x:Name="DeliveryDistrict" Text="大安區"></Entry>
             <Label Text="地址"/>
-            <Entry x:Name="DeliveryAddress"></Entry>
+            <Entry x:Name="DeliveryAddress" Text="和平東路二段106號11樓"></Entry>
             <Button Text="下一步" Clicked="button_clicked" CommandParameter="{Binding .}"></Button>
         </StackLayout>
     </ContentPage.Content>

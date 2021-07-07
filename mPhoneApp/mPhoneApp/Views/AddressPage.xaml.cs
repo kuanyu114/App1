@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -65,6 +65,15 @@ namespace mPhoneApp.Views
                 {
                     Debug.WriteLine(@"Addorder successfully saved.");
                     Debug.WriteLine( response.Content.ToString());
+                    await Browser.OpenAsync("https://prjdelicious.azurewebsites.net/OrderDetail/List?memberid=51&status=%E5%BE%85%E4%BB%98%E6%AC%BE", new BrowserLaunchOptions
+                    {
+                        LaunchMode = BrowserLaunchMode.SystemPreferred,
+                        TitleMode = BrowserTitleMode.Show,
+                        PreferredToolbarColor = Color.AliceBlue,
+                        PreferredControlColor = Color.Violet
+
+                    });
+                
                 }
                 else
                 {
