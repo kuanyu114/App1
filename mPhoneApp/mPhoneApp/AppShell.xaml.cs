@@ -17,6 +17,9 @@ namespace mPhoneApp
             Routing.RegisterRoute(nameof(PublicChatPage), typeof(PublicChatPage));
             Routing.RegisterRoute(nameof(PageDetail), typeof(PageDetail));
             Routing.RegisterRoute(nameof(MallPage), typeof(MallPage));
+            Routing.RegisterRoute(nameof(ShopCartPage), typeof(ShopCartPage));
+            Routing.RegisterRoute(nameof(AddressPage), typeof(AddressPage));
+            
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

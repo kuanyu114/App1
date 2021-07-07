@@ -1,6 +1,8 @@
-﻿using mPhoneApp.Services;
+﻿using mPhoneApp.Models;
+using mPhoneApp.Services;
 using mPhoneApp.Views;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,7 +10,7 @@ namespace mPhoneApp
 {
     public partial class App : Application
     {
-
+         
         public App()
         {
             InitializeComponent();

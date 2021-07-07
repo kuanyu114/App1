@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:mPhoneApp.ViewModels"
              >
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+        <vm:PublicchatViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mPhoneApp.Views.AddressPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="收件人名"/>
+            <Entry x:Name="Reciever"></Entry>
+            <Label Text="連絡電話"/>
+            <Entry x:Name="PhoneNumber"></Entry>
+            <Label Text="城市"/>
+            <Entry x:Name="DeliveryCounty"></Entry>
+            <Label Text="行政區"/>
+            <Entry x:Name="DeliveryDistrict"></Entry>
+            <Label Text="地址"/>
+            <Entry x:Name="DeliveryAddress"></Entry>
+            <Button Text="下一步" Clicked="button_clicked" CommandParameter="{Binding .}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

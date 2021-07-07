@@ -5,18 +5,18 @@ using Xamarin.Forms;
 
 namespace mPhoneApp.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class PublicchatViewModel : BaseViewModel
     {
-        public AboutViewModel()
+        public PublicchatViewModel()
         {
-            Title = "";
+            Title = "公開聊天室";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://prjdelicious.azurewebsites.net/publicchat", new BrowserLaunchOptions
             {
                 LaunchMode = BrowserLaunchMode.SystemPreferred,
                 TitleMode = BrowserTitleMode.Show,
                 PreferredToolbarColor = Color.AliceBlue,
                 PreferredControlColor = Color.Violet
-                
+
             }));
         }
 

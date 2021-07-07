@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mPhoneApp.Views.ShopCartPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="5">
+            <ListView x:Name="list" SeparatorColor="blue" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image Source="{Binding ingpicsrc}" HeightRequest="64" WidthRequest="64" HorizontalOptions="Start"/>
+                                <StackLayout VerticalOptions="StartAndExpand">
+                                    <Label Text="商品: "></Label>
+                                    <Label Text="{Binding ingredient}" FontSize="Subtitle" HorizontalTextAlignment="Center"></Label>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="StartAndExpand">
+                                    <Label Text=" 購買數量: "></Label>
+                                    <Label Text="{Binding cartQty}" HorizontalTextAlignment="Center"></Label>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="StartAndExpand">
+                                    <Label Text=" 單位價格: "></Label>
+                                    <Label Text="{Binding unitprice}" HorizontalTextAlignment="Center"></Label>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="結帳" Clicked="button_clicked" CommandParameter="{Binding .}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

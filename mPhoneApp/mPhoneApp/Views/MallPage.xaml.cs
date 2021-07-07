@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -31,6 +32,14 @@ namespace mPhoneApp.Views
         }
         private async void button_clicked(object sender, EventArgs e)
         {
+           
+            var btn = sender as Button;
+            var cshopitemslist = btn.CommandParameter as Cshopitemslist;           
+            await Shell.Current.GoToAsync($"{nameof(ShopCartPage)}?{nameof(ShopCartPage.ItemId)}={cshopitemslist.IngredientId}" +
+                $"&{nameof(ShopCartPage.cartQty)}={1}" +
+                $"&{nameof(ShopCartPage.ingredient)}={cshopitemslist.Ingredient}" +
+                $"&{nameof(ShopCartPage.unitprice)}={ cshopitemslist.Price }" +
+                $"&{nameof(ShopCartPage.ingpicsrc)}={ cshopitemslist.MerchandisePicture }");
         }
     }
 }
