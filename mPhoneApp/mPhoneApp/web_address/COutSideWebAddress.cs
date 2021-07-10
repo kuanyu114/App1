@@ -6,6 +6,6 @@ namespace mPhoneApp.web_address
 {
     class COutSideWebAddress
     {
-        public static string projectWebAddress = "https://msit13001delicious.azurewebsites.net/";
+        public static string projectWebAddress = "https://deliciousnet.azurewebsites.net/";
     }
 }

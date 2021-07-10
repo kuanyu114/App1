@@ -54,18 +54,20 @@ namespace mPhoneApp.Views
             }
             if (response.IsSuccessStatusCode)
             {
-                Debug.WriteLine(@"AddDeliverInfo successfully saved.");
-
+                //Debug.WriteLine(@"AddDeliverInfo successfully saved.");
+                string content = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(content);
                 response = null;
                 var fooJSON1 = JsonConvert.SerializeObject(cshopitemslist);
                 using (var fooContent1 = new StringContent(fooJSON1, Encoding.UTF8, "application/json"))
                 {
                     response = await _client.PostAsync(FooUrl1, fooContent1);
                 }
-                if (response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)  
                 {
-                    Debug.WriteLine(@"Addorder successfully saved.");
-                    Debug.WriteLine( response.Content.ToString());
+                    //Debug.WriteLine(@"Addorder successfully saved.");
+                    content = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine(content);
 
                     await Shell.Current.GoToAsync($"{nameof(ShopResultPage)}");
 
