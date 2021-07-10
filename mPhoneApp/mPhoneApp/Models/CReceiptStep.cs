@@ -14,7 +14,7 @@ namespace mPhoneApp.Models
         public string picture
         {
             get { return _Picture; }
-            set { _Picture = "aa" + value; }
+            set { _Picture = "https://msit13001delicious.azurewebsites.net/" + value; }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using mPhoneApp.Models;
+using mPhoneApp.web_address;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace mPhoneApp.Views
         }
         protected override async void OnAppearing()
         {
-            var contents = await _client.GetStringAsync("https://webchart.azurewebsites.net/api/RecipeStep/?id="+_ItemId);
+            var contents = await _client.GetStringAsync(COutSideWebAddress.projectWebAddress + "apiphone/RecipeStep/?id=" + _ItemId);
             var cReceiptStep = JsonConvert.DeserializeObject<List<CReceiptStep>>(contents);
             _cReceiptStep = new ObservableCollection<CReceiptStep>(cReceiptStep);
             list.ItemsSource = _cReceiptStep;

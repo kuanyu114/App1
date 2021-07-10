@@ -13,7 +13,7 @@ namespace mPhoneApp.Models
         public string recipeDescription { get; set; }
         public string Picture { 
             get { return _Picture; } 
-            set {_Picture= "https://prjdelicious.azurewebsites.net/" + value;} }
+            set {_Picture= "https://msit13001delicious.azurewebsites.net/" + value;} }
 
 
     }

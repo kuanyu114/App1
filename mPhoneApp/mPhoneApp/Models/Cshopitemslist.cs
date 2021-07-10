@@ -20,7 +20,7 @@ namespace mPhoneApp.Models
         public string IngredientCategory { get; set; }
         public string MerchandisePicture {
             get { return _MerchandisePicture; }
-            set { _MerchandisePicture = "https://deliciousmanagement.azurewebsites.net/img/IngredientPic/" + value; }
+            set { _MerchandisePicture = "https://msit13001management.azurewebsites.net/img/IngredientPic/" + value; }
         }
         private string _MerchandisePicture;
     }

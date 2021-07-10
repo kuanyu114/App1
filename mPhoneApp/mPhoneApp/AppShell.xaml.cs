@@ -19,7 +19,7 @@ namespace mPhoneApp
             Routing.RegisterRoute(nameof(MallPage), typeof(MallPage));
             Routing.RegisterRoute(nameof(ShopCartPage), typeof(ShopCartPage));
             Routing.RegisterRoute(nameof(AddressPage), typeof(AddressPage));
-            
+            Routing.RegisterRoute(nameof(ShopResultPage), typeof(ShopResultPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

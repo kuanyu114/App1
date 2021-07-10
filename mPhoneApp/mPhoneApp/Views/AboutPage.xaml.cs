@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using mPhoneApp.web_address;
 
 namespace mPhoneApp.Views
 {
@@ -22,7 +23,7 @@ namespace mPhoneApp.Views
         }
         protected override async void OnAppearing()
         {
-            var contents = await _client.GetStringAsync("https://webchart.azurewebsites.net/api/RecipeList");
+            var contents = await _client.GetStringAsync(COutSideWebAddress.projectWebAddress + "apiphone/RecipeList");
             var creceipt = JsonConvert.DeserializeObject<List<CReceipt>>(contents);
             _cReceipts = new ObservableCollection<CReceipt>(creceipt);
             list.ItemsSource = _cReceipts;

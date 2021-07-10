@@ -1,4 +1,5 @@
 ﻿using mPhoneApp.Models;
+using mPhoneApp.web_address;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -39,8 +40,8 @@ namespace mPhoneApp.Views
 
             var cshopitemslist = Cdatas.tempcart;
 
-            Uri FooUrl = new Uri($"https://webchart.azurewebsites.net/api/AddDeliverInfo");
-            Uri FooUrl1 = new Uri("https://webchart.azurewebsites.net/api/Addorder");
+            Uri FooUrl = new Uri(COutSideWebAddress.projectWebAddress +"apiphone/AddDeliverInfo");
+            Uri FooUrl1 = new Uri(COutSideWebAddress.projectWebAddress + "apiphone/Addorder");
             HttpResponseMessage response = null;
 
              
@@ -65,15 +66,9 @@ namespace mPhoneApp.Views
                 {
                     Debug.WriteLine(@"Addorder successfully saved.");
                     Debug.WriteLine( response.Content.ToString());
-                    await Browser.OpenAsync("https://prjdelicious.azurewebsites.net/OrderDetail/List?memberid=51&status=%E5%BE%85%E4%BB%98%E6%AC%BE", new BrowserLaunchOptions
-                    {
-                        LaunchMode = BrowserLaunchMode.SystemPreferred,
-                        TitleMode = BrowserTitleMode.Show,
-                        PreferredToolbarColor = Color.AliceBlue,
-                        PreferredControlColor = Color.Violet
 
-                    });
-                
+                    await Shell.Current.GoToAsync($"{nameof(ShopResultPage)}");
+
                 }
                 else
                 {
