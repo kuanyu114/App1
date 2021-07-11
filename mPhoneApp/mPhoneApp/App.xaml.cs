@@ -10,13 +10,14 @@ namespace mPhoneApp
 {
     public partial class App : Application
     {
+        public static CMember_info cMember_Info = new CMember_info();
          
         public App()
         {
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            //MainPage = new NavigationPage(new AppShell());
+            
             MainPage = new AppShell();
         }
 

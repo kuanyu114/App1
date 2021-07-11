@@ -21,7 +21,7 @@ namespace mPhoneApp.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await Browser.OpenAsync(COutSideWebAddress.projectWebAddress + "OrderDetail/List?memberid=51&status=%E5%BE%85%E4%BB%98%E6%AC%BE", new BrowserLaunchOptions
+            await Browser.OpenAsync(COutSideWebAddress.projectWebAddress + "OrderDetail/List?memberid="+App.cMember_Info.MemberId+"&status=%E5%BE%85%E4%BB%98%E6%AC%BE", new BrowserLaunchOptions
             {
                 LaunchMode = BrowserLaunchMode.SystemPreferred,
                 TitleMode = BrowserTitleMode.Show,

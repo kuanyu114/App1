@@ -31,7 +31,8 @@ namespace mPhoneApp.Views
             {
                 return;
             }
-            cOrder.memberId = 51;
+            if(App.cMember_Info.MemberId == 0) { await Shell.Current.GoToAsync($"//{nameof(LoginPage)}"); return; }
+            cOrder.memberId = App.cMember_Info.MemberId;
             cOrder.reciever = Reciever.Text;
             cOrder.phoneNumber = PhoneNumber.Text;
             cOrder.deliveryCounty = DeliveryCounty.Text;
