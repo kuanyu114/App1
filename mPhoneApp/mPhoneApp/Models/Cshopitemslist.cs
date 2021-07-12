@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mPhoneApp.web_address;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -20,7 +21,7 @@ namespace mPhoneApp.Models
         public string IngredientCategory { get; set; }
         public string MerchandisePicture {
             get { return _MerchandisePicture; }
-            set { _MerchandisePicture = "https://msit13001management.azurewebsites.net/img/IngredientPic/" + value; }
+            set { _MerchandisePicture = COutSideWebAddress.managementWebAddress+"img/IngredientPic/" + value; }
         }
         private string _MerchandisePicture;
     }

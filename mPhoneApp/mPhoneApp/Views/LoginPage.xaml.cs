@@ -23,12 +23,21 @@ namespace mPhoneApp.Views
          
         private void Member_Account_Completed(object sender, EventArgs e)
         {
+            
             App.cMember_Info.AccountName = Member_Account.Text.ToString();
         }
 
         private void Member_Password_Completed(object sender, EventArgs e)
         {
+            
             App.cMember_Info.Password = Member_Password.Text.ToString();
+            
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Member_Account.Text = "";
+            Member_Password.Text = "";
         }
     }
 }

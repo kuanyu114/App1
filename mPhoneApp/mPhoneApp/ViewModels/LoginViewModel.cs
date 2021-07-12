@@ -53,6 +53,8 @@ namespace mPhoneApp.ViewModels
                     App.cMember_Info.Nickname = creceipt.Nickname;
                     App.cMember_Info.Password = password_before;
                     await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+                    
+
                 }
             }
         }

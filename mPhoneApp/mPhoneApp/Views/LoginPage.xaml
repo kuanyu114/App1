@@ -5,14 +5,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="mPhoneApp.Views.LoginPage"
+             xmlns:vm="clr-namespace:mPhoneApp.Models"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
             <Label Text="帳號"/>
             <Entry x:Name="Member_Account" Text="" TextChanged="Member_Account_Completed" ></Entry>
             <Label Text="密碼"/>
-            <Entry x:Name="Member_Password" Text="" TextChanged="Member_Password_Completed"></Entry>
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Entry x:Name="Member_Password" Text="" TextChanged="Member_Password_Completed" IsPassword="True"></Entry>
+            <Button VerticalOptions="Center" Clicked="Button_Clicked" Text="Login" Command="{Binding LoginCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
