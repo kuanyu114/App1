@@ -5,10 +5,14 @@
              x:Class="mPhoneApp.Views.MapSearchPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
+            <Entry x:Name="EntryName"></Entry>
+            <Label Text="Latitude" Margin="0,24,0,0"
+                  />
+            <Entry Keyboard="Numeric" Text="47.603230" x:Name="EntryLatitude"></Entry>
+            <Label Text="Longitude"              />
+            <Entry Keyboard="Numeric" Text="-122.330276" x:Name="EntryLongitude"></Entry>
+            <Button Text="open" x:Name="buttonopen" Clicked="buttonopen_Clicked"></Button>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
