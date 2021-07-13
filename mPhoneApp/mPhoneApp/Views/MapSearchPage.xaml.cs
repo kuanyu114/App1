@@ -19,46 +19,46 @@ namespace mPhoneApp.Views
 
         private async void buttonopen_Clicked(object sender, EventArgs e)
         {
-            var location = await Geolocation.GetLastKnownLocationAsync();
-            if(location==null)
+            if (!string.IsNullOrEmpty( EntryName.Text) )
             {
-                location = await Geolocation.GetLocationAsync(new GeolocationRequest
-                {
-                    DesiredAccuracy = GeolocationAccuracy.Medium,
-                    Timeout = TimeSpan.FromSeconds(30)
-                }) ;
-            }
-            //if (!double.TryParse(EntryLatitude.Text, out double lat))
-            //    return;
-            //if (!double.TryParse(EntryLongitude.Text, out double lng))
-            //    return;
-            //await Map.OpenAsync(lat, lng, new MapLaunchOptions {
-            //    Name = EntryName.Text,
-            //   NavigationMode = NavigationMode.None
-            //});
-            await Map.OpenAsync(location, new MapLaunchOptions
-            {
-                Name = EntryName.Text,
-                NavigationMode = NavigationMode.None
-            });
-        }
-    }
-    public class MapTest
-    {
-        public async Task NavigateToBuilding25()
-        {
-            var location = new Location(47.645160, -122.1306032);
-            var options = new MapLaunchOptions { Name = "Microsoft Building 25" };
+                var address = EntryName.Text;
+                var locations = await Geocoding.GetLocationsAsync(address);
 
-            try
-            {
-                await Map.OpenAsync(location, options);
+                var location = locations?.FirstOrDefault();
+
+                await Map.OpenAsync(location, new MapLaunchOptions
+                {
+                    Name = EntryName.Text,
+                    NavigationMode = NavigationMode.None
+                });
             }
-            catch (Exception ex)
+            else
             {
-                // No map application available to open
+                var location = await Geolocation.GetLastKnownLocationAsync();
+                if (location == null)
+                {
+                    location = await Geolocation.GetLocationAsync(new GeolocationRequest
+                    {
+                        DesiredAccuracy = GeolocationAccuracy.Medium,
+                        Timeout = TimeSpan.FromSeconds(30)
+                    });
+                }
+                //if (!double.TryParse(EntryLatitude.Text, out double lat))
+                //    return;
+                //if (!double.TryParse(EntryLongitude.Text, out double lng))
+                //    return;
+                //await Map.OpenAsync(lat, lng, new MapLaunchOptions {
+                //    Name = EntryName.Text,
+                //   NavigationMode = NavigationMode.None
+                //});
+                await Map.OpenAsync(location, new MapLaunchOptions
+                {
+                    Name = "您的所在地",
+                    NavigationMode = NavigationMode.None
+                });
             }
         }
     }
+   
 
 }

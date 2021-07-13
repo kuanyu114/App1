@@ -5,12 +5,8 @@
              x:Class="mPhoneApp.Views.MapSearchPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="EntryName"></Entry>
-            <Label Text="Latitude" Margin="0,24,0,0"
-                  />
-            <Entry Keyboard="Numeric" Text="47.603230" x:Name="EntryLatitude"></Entry>
-            <Label Text="Longitude"              />
-            <Entry Keyboard="Numeric" Text="-122.330276" x:Name="EntryLongitude"></Entry>
+            <Label Text="請輸入查詢目標" Margin="0,24,0,0"/>
+            <Entry x:Name="EntryName"></Entry>            
             <Button Text="跳轉地圖" x:Name="buttonopen" Clicked="buttonopen_Clicked"></Button>
 
         </StackLayout>
