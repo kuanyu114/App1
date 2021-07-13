@@ -45,7 +45,9 @@ namespace mPhoneApp.ViewModels
             {     
                 string content = await response.Content.ReadAsStringAsync();
                 Debug.WriteLine(content);
-                if (content == "account_no_found" || content == "empty") { await Shell.Current.GoToAsync($"//{nameof(LoginPage)}"); }
+                if (content == "account_no_found" || content == "empty") {
+                    
+                    return; /*await Shell.Current.GoToAsync($"{nameof(LoginPage)}");*/ }
                 else
                 {
                     CMember_info creceipt = JsonConvert.DeserializeObject<CMember_info>(content);

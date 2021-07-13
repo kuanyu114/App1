@@ -13,7 +13,7 @@
             <Entry x:Name="Member_Account" Text="" TextChanged="Member_Account_Completed" ></Entry>
             <Label Text="密碼"/>
             <Entry x:Name="Member_Password" Text="" TextChanged="Member_Password_Completed" IsPassword="True"></Entry>
-            <Button VerticalOptions="Center" Clicked="Button_Clicked" Text="Login" Command="{Binding LoginCommand}"/>
+            <Button VerticalOptions="Center" Clicked="Button_Clicked" Text="Login" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

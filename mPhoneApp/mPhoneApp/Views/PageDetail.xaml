@@ -13,7 +13,7 @@
                                 <StackLayout HorizontalOptions="StartAndExpand">
                                 <Label Text="{Binding stepsNumber}"></Label>
                                 <Label Text="{Binding steps}"></Label>
-                                <Image Source="{Binding picture}" />
+                                <Image Source="{Binding picture}"  />
                                 </StackLayout>
                                
                             </StackLayout>

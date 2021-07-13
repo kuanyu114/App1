@@ -32,7 +32,7 @@ namespace mPhoneApp.Views
                 return;
             }
             if(App.cMember_Info.MemberId == 0) {
-                await DisplayAlert("Alert", "請登入會員", "OK");
+                await DisplayAlert("提示", "請登入會員", "OK");
                 await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
                 return;
             }
