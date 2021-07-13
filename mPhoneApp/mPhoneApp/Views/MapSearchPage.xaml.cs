@@ -25,7 +25,10 @@ namespace mPhoneApp.Views
                 var locations = await Geocoding.GetLocationsAsync(address);
 
                 var location = locations?.FirstOrDefault();
-
+                if(location == null)
+                { await DisplayAlert("Alert", "不是正確的地點", "OK");
+                    return;
+                }
                 await Map.OpenAsync(location, new MapLaunchOptions
                 {
                     Name = EntryName.Text,

@@ -2,10 +2,11 @@
     
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="mPhoneApp.Views.MapSearchPage">
+             x:Class="mPhoneApp.Views.MapSearchPage"
+             
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="請輸入查詢目標" Margin="0,24,0,0"/>
+            <Label Text="請輸入地址目標" Margin="0,24,0,0"/>
             <Entry x:Name="EntryName"></Entry>            
             <Button Text="跳轉地圖" x:Name="buttonopen" Clicked="buttonopen_Clicked"></Button>
 
