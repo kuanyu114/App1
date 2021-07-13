@@ -11,7 +11,7 @@
             <Entry Keyboard="Numeric" Text="47.603230" x:Name="EntryLatitude"></Entry>
             <Label Text="Longitude"              />
             <Entry Keyboard="Numeric" Text="-122.330276" x:Name="EntryLongitude"></Entry>
-            <Button Text="open" x:Name="buttonopen" Clicked="buttonopen_Clicked"></Button>
+            <Button Text="跳轉地圖" x:Name="buttonopen" Clicked="buttonopen_Clicked"></Button>
 
         </StackLayout>
     </ContentPage.Content>

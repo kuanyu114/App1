@@ -19,14 +19,27 @@ namespace mPhoneApp.Views
 
         private async void buttonopen_Clicked(object sender, EventArgs e)
         {
-
-            if (!double.TryParse(EntryLatitude.Text, out double lat))
-                return;
-            if (!double.TryParse(EntryLongitude.Text, out double lng))
-                return;
-            await Map.OpenAsync(lat, lng, new MapLaunchOptions {
+            var location = await Geolocation.GetLastKnownLocationAsync();
+            if(location==null)
+            {
+                location = await Geolocation.GetLocationAsync(new GeolocationRequest
+                {
+                    DesiredAccuracy = GeolocationAccuracy.Medium,
+                    Timeout = TimeSpan.FromSeconds(30)
+                }) ;
+            }
+            //if (!double.TryParse(EntryLatitude.Text, out double lat))
+            //    return;
+            //if (!double.TryParse(EntryLongitude.Text, out double lng))
+            //    return;
+            //await Map.OpenAsync(lat, lng, new MapLaunchOptions {
+            //    Name = EntryName.Text,
+            //   NavigationMode = NavigationMode.None
+            //});
+            await Map.OpenAsync(location, new MapLaunchOptions
+            {
                 Name = EntryName.Text,
-               NavigationMode = NavigationMode.None
+                NavigationMode = NavigationMode.None
             });
         }
     }
