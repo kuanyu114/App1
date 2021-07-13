@@ -33,10 +33,7 @@ namespace mPhoneApp.Views
         }
         private async void button_clicked(object sender, EventArgs e)
         {
-            if (App.cMember_Info.MemberId == 0)
-            {
-                await Shell.Current.GoToAsync($"{nameof(LoginPage)}"); return;
-            }
+            
             var btn = sender as Button;
             var cshopitemslist = btn.CommandParameter as Cshopitemslist;           
             await Shell.Current.GoToAsync($"{nameof(ShopCartPage)}?{nameof(ShopCartPage.ItemId)}={cshopitemslist.IngredientId}" +

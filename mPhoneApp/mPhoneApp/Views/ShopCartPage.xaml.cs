@@ -106,6 +106,12 @@ namespace mPhoneApp.Views
         }
         private async void button_clicked(object sender, EventArgs e)
         {
+            if (App.cMember_Info.MemberId == 0)
+            {
+                await DisplayAlert("Alert", "請登入會員", "OK");
+                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");                
+                return;                
+            }
             await Shell.Current.GoToAsync($"{nameof(AddressPage)}");
             //var btn = sender as Button;
            
