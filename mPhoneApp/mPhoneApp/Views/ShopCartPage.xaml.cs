@@ -112,12 +112,18 @@ namespace mPhoneApp.Views
         }
         private async void button_clicked(object sender, EventArgs e)
         {
+            if (Cdatas.tempcart.Count == 0)
+            {
+                await DisplayAlert("提示", "請先加入商品", "OK");
+                return;
+            }
             if (App.cMember_Info.MemberId == 0)
             {
                 await DisplayAlert("提示", "請登入會員", "OK");
-                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");                
-                return;                
+                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+                return;
             }
+            
             await Shell.Current.GoToAsync($"{nameof(AddressPage)}");
             
            
@@ -129,7 +135,7 @@ namespace mPhoneApp.Views
             var btn = sender as ImageButton;
             var creceipt = btn.CommandParameter as CShopCart;
             //Debug.WriteLine(creceipt.ingid);
-            if (creceipt.cartQty > 0)
+            if (creceipt.cartQty > 1)
             {
                 creceipt.cartQty--;
                 foreach (var item in Cdatas.tempcart)
@@ -139,6 +145,19 @@ namespace mPhoneApp.Views
                         item.cartQty = creceipt.cartQty;
                     }
                 }
+            }
+            else if(creceipt.cartQty == 1)
+            {
+                int count_tempcart = 0;
+                foreach (var item in Cdatas.tempcart)
+                {
+                    if (creceipt.ingid == item.ingid)
+                    {
+                        break;
+                    }
+                    count_tempcart++;
+                }
+                Cdatas.tempcart.RemoveAt(count_tempcart);
             }
             list.ItemsSource = null;
             list.ItemsSource = Cdatas.tempcart;
