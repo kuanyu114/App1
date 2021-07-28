@@ -94,5 +94,11 @@ namespace mPhoneApp.Views
 
             return builder.ToString();
         }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Member_Account.Text = "kuan12345";
+            Member_Password.Text = "kuan12345";
+        }
     }
 }

@@ -3,6 +3,8 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -27,6 +29,7 @@ namespace mPhoneApp.Views
         private string _ingredient = "";
         private string _unitprice = "";
         private string _ingpicsrc="";
+       
         public int ItemId
         {
             set
@@ -38,8 +41,11 @@ namespace mPhoneApp.Views
         {
             set
             {
-                _cartQty = value;
+                
+             _cartQty = value;
+                 
             }
+            get { return _cartQty; }
         }
         public string ingredient
         {
@@ -113,8 +119,48 @@ namespace mPhoneApp.Views
                 return;                
             }
             await Shell.Current.GoToAsync($"{nameof(AddressPage)}");
-            //var btn = sender as Button;
+            
            
         }
+
+        private void ImageButton_Clicked_MIN(object sender, EventArgs e)
+        {
+             
+            var btn = sender as ImageButton;
+            var creceipt = btn.CommandParameter as CShopCart;
+            //Debug.WriteLine(creceipt.ingid);
+            if (creceipt.cartQty > 0)
+            {
+                creceipt.cartQty--;
+                foreach (var item in Cdatas.tempcart)
+                {
+                    if (creceipt.ingid == item.ingid)
+                    {
+                        item.cartQty = creceipt.cartQty;
+                    }
+                }
+            }
+            list.ItemsSource = null;
+            list.ItemsSource = Cdatas.tempcart;
+        }
+
+        private void ImageButton_Clicked_ADD(object sender, EventArgs e)
+        {
+            var btn = sender as ImageButton;
+            var creceipt = btn.CommandParameter as CShopCart;
+            Debug.WriteLine(list.SelectedItem);
+             
+            creceipt.cartQty++;
+            foreach (var item in Cdatas.tempcart)
+            {
+                if(creceipt.ingid == item.ingid)
+                {
+                    item.cartQty = creceipt.cartQty;
+                }
+            }
+            list.ItemsSource = null;
+            list.ItemsSource = Cdatas.tempcart;
+        }
     }
+    
 }

@@ -9,6 +9,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="5">
+                                
                                 <Image Source="{Binding ingpicsrc}" HeightRequest="64" WidthRequest="64" HorizontalOptions="Start"/>
                                 <StackLayout VerticalOptions="StartAndExpand">
                                     <Label Text="商品: "></Label>
@@ -16,7 +17,13 @@
                                 </StackLayout>
                                 <StackLayout VerticalOptions="StartAndExpand">
                                     <Label Text=" 購買數量: "></Label>
-                                    <Label Text="{Binding cartQty}" HorizontalTextAlignment="Center"></Label>
+                                    <StackLayout>
+                                        <ImageButton Source="cancel_icon.png" WidthRequest="30"  BackgroundColor="#00000000" Clicked="ImageButton_Clicked_MIN" CommandParameter="{Binding .}">
+                                        </ImageButton>
+                                        <Label  Text="{Binding cartQty, Mode=TwoWay}" HorizontalTextAlignment="Center"></Label>
+                                        <ImageButton Source="add_icon.png"  WidthRequest="30" BackgroundColor="#00000000" Clicked="ImageButton_Clicked_ADD" CommandParameter="{Binding .}">
+                                    </ImageButton>
+                                    </StackLayout>
                                 </StackLayout>
                                 <StackLayout VerticalOptions="StartAndExpand">
                                     <Label Text=" 單位價格: "></Label>

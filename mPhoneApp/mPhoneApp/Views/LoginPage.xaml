@@ -14,6 +14,7 @@
             <Label Text="密碼"/>
             <Entry x:Name="Member_Password" Text="" TextChanged="Member_Password_Completed" IsPassword="True"></Entry>
             <Button VerticalOptions="Center" Clicked="Button_Clicked" Text="Login" />
+            <Button VerticalOptions="Center" Clicked="Button_Clicked_1" Text="DEMO" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
