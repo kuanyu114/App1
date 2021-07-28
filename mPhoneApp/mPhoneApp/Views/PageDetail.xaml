@@ -10,10 +10,11 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image Source="{Binding picture}" WidthRequest="150"  />
                                 <StackLayout HorizontalOptions="StartAndExpand">
                                 <Label Text="{Binding stepsNumber}"></Label>
                                 <Label Text="{Binding steps}"></Label>
-                                <Image Source="{Binding picture}"  />
+                                
                                 </StackLayout>
                                
                             </StackLayout>
